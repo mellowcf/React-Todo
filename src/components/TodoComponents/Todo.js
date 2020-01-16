@@ -1,18 +1,15 @@
 import React from 'react';
 
-const Chore = props => {
-    let verboseClassName = 'chore';
-    if(props.chore.finished) {
-        verboseClassName = verboseClassName + 'finished';
-    };
-    const handleClick = () => {
-        props.toggleFinished(props.chore.id);
-    };
-    return (
-        <div onClick={handleClick} className={verboseClassName}>
-            <p>{props.chore.name}</p>
-        </div>
-    );
+const Todos = props => {
+  return (
+    <div className= {`todo${props.Todos.completed ? ' completed' : ''}`}
+    onClick={() => props.toggleItem(props.Todos.id)}
+    >
+      <p>{props.Todos.task}</p>
+      
+    </div>
+  );
 };
 
-export default Chore;
+export default Todos;
+
