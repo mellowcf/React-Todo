@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Todos = props => {
+const Todo = props => {
   return (
-    <div className= {`todo${props.Todos.completed ? ' completed' : ''}`}
-    onClick={() => props.toggleItem(props.Todos.id)}
-    >
-      <p>{props.Todos.task}</p>
+    <div class="listing"
+      style={props.todo.completed ? { textDecoration: 'line-through' } : null}
       
+      onClick={() => props.handleToggleComplete(props.todo.id)}
+    >
+      {props.todo.task}
     </div>
   );
 };
 
-export default Todos;
-
+export default Todo;
